@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Contact",
+  title: "Contacto",
 };
 
 export default function Layout({
