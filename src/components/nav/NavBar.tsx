@@ -7,7 +7,7 @@ import Link from "next/link";
 const menuItems = [
   { name: "Inicio", path: "/", icon: <IoMdHome /> },
   { name: "Productos", path: "/products", icon: <FaListUl /> },
-  { name: "Tienda", path: "/store", icon: <FaShoppingCart /> },
+  { name: "Tienda", path: "/", icon: <FaShoppingCart /> },
   { name: "Contacto", path: "/contact", icon: <FaEnvelope /> },
 ];
 
