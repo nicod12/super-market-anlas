@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
 import "./globals.css";
 import NavBar from "../components/nav/NavBar";
 
-const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "SUPERMERCADO ANLAS",
@@ -24,7 +24,7 @@ export default function RootLayout({
           type="image/x-icon"
         />
       </head>
-      <body className={inter.className}>
+      <body>
         <NavBar />
        <section>
        {children}
