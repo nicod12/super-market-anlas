@@ -1,4 +1,9 @@
-const ContactPage = () => {
-  return <h1>Hola</h1>;
-};
-export default ContactPage;
+
+
+const page = () => {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page

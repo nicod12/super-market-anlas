@@ -1,3 +1,5 @@
+import HomePage from '../pages/HomePage'
+
 export default function Home() {
-  return <h2>Hola</h2>;
+  return <HomePage />
 }
