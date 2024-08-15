@@ -12,9 +12,8 @@ function Carousel() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-    }, 4000); // Intervalo en milisegundos (3000 ms = 3 segundos)
+    }, 4000); 
 
-    // Limpiar el intervalo al desmontar el componente
     return () => clearInterval(intervalId);
   }, []);
 
