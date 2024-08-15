@@ -3,12 +3,12 @@
 const Footer = () => {
   return (
     <footer>
-    <div className="grid grid-cols-1 w-full bottom-0 relative bg-[#51c2f1] text-white">
-      <div className="m-0">
+    <div className="grid grid-cols-1 items-center w-full bottom-0 relative bg-[#51c2f1] text-white" >
+      <div className="flex justify-center pt-[4px]">
         <img
           src="../../assets/icons/logo-sa.png"
           alt="Logo Supermercado Anlas"
-          width="80%"
+          width="25%"
         />
       </div>
 

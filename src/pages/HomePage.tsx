@@ -1,3 +1,7 @@
+"use client"
+import Carousel from "../components/carousel/Carousel";
+
+
 
 const HomePage = () => {
   return (
@@ -10,7 +14,7 @@ const HomePage = () => {
         </h2>
         <section className="w-full h-auto">
           <div className="flex items-center justify-center w-[80%] mt-[50px] mx-auto mb-[30px] flex-col">
-            <div><img src="../assets/images/descarga.webp" alt="img" /></div>
+            <div><img src="../assets/images/descarga.webp" alt="img" width={300} className="w-[250px] sm:w-[300px]" /></div>
 
             <div>
               <h5 className="text-[#0e1c85] text-center text-[20px] pt-5">Nosotros</h5>
@@ -41,65 +45,19 @@ const HomePage = () => {
                 nos esforzamos por ser su supermercado de elección.
               </p>
             </div>
-            <div><img src="../assets/images/descarga1.webp" alt="img" /></div>
+            <div><img src="../assets/images/descarga1.webp" alt="img" width={300} className="w-[250px] sm:w-[300px]" /></div>
           </div>
         </section>
 
-        {/* <section className="carousel__home hidden-lg hidden-md">
-        <div
-          id="carouselExampleControls"
-          className="carousel slide"
-          data-ride="carousel"
-        >
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img
-                className="d-block w-100"
-                src="../assets/images/carrusel1.webp"
-                alt="First slide"
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                className="d-block w-100"
-                src="../assets/images/carrusel2.webp"
-                alt="Second slide"
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                className="d-block w-100"
-                src="../assets/images/.webp"
-                alt="Third slide"
-              />
-            </div>
-          </div>
-          <a
-            className="carousel-control-prev"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="prev"
-          >
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="sr-only">Previous</span>
-          </a>
-          <a
-            className="carousel-control-next"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="next"
-          >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="sr-only">Next</span>
-          </a>
-        </div>
-      </section> */}
+         <section className="carousel__home lg:hidden md-hidden">
+          <Carousel />
+         </section> 
 
 
 
         <section className="w-full h-auto">
           <div className="flex items-center justify-center w-[80%] mt-[50px] mx-auto mb-[30px] flex-col">
-            <div><img src="../assets/images/descarga2.webp" alt="img" /></div>
+            <div><img src="../assets/images/descarga2.webp" alt="img" width={300} className="w-[250px] sm:w-[300px]" /></div>
 
             <div>
               <h5 className="text-[#0e1c85] text-center text-[20px] pt-5">Ustedes</h5>
@@ -128,7 +86,7 @@ const HomePage = () => {
                 gratificante con nuestras ofertas exclusivas y atractivas.
               </p>
             </div>
-            <div><img src="../assets/images/descarga3.webp" alt="img" /></div>
+            <div><img src="../assets/images/descarga3.webp" alt="img" width={300} className="w-[250px] sm:w-[300px]" /></div>
           </div>
         </section>
 
