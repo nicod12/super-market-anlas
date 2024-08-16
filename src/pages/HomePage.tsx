@@ -121,9 +121,8 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-
-        <section className="bg-[#06a2d8] py-2 mb-[32px] text-[16px]">
-          <div>
+        <section className="bg-[#06a2d8] py-2 mb-[32px] text-[16px] overflow-hidden">
+          <div className="w-full">
             <h2 className="text-gray-200 font-semibold whitespace-nowrap animate-marquee text-center">
               Aprovechá nuestro 20% de descuento en efectivo comprando más de $100.000.
             </h2>
