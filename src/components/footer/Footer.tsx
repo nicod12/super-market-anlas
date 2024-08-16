@@ -30,7 +30,7 @@ const Footer = () => {
       </div>
 
       <div>
-        <p className="text-center p-[1%] text-[16px] lg:text-[14px] mt-0 mx-0 mb-[16px]">
+        <p className="text-center p-[1%] text-[16px] lg:text-[18px] mt-0 mx-0 mb-[16px]">
           Copyright © | 2024 | SUPERMERCADO ANLAS<br />
           Todos los Derechos Reservados <br />
           Diseño y Desarrollo por<br />

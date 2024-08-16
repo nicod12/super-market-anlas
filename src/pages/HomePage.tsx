@@ -26,7 +26,7 @@ const HomePage = () => {
               <h5 className="text-[#0e1c85] text-center text-[20px] pt-5 lg:pt-0 ">
                 Nosotros
               </h5>
-              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[12px] lg:text-justify lg:pr-20">
+              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[15px] lg:pr-20">
                 Somos un supermercado comprometido con la excelencia y la
                 satisfacción de nuestros clientes. Ofrecemos una amplia variedad
                 de productos frescos, saludables y de alta calidad, siempre
@@ -45,7 +45,7 @@ const HomePage = () => {
               <h5 className="text-[#0e1c85] text-center text-[20px] pt-5 lg:pt-0">
                 Nuestra misión
               </h5>
-              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[12px] lg:text-justify lg:pl-20">
+              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[15px] lg:pl-20">
                 Nuestra misión es ofrecer productos de alta calidad a precios
                 justos, asegurando una experiencia de compra positiva y
                 satisfactoria para nuestros clientes. Nos comprometemos a
@@ -84,7 +84,7 @@ const HomePage = () => {
               <h5 className="text-[#0e1c85] text-center text-[20px] pt-5 lg:pt-0">
                 Ustedes
               </h5>
-              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[12px] lg:text-justify lg:pr-20">
+              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[15px] lg:pr-20">
                 Ustedes son el corazón de nuestro supermercado. Cada día
                 trabajamos para ofrecerles productos y servicios que se adapten
                 a sus necesidades y preferencias. Apreciamos su confianza y
