@@ -27,18 +27,18 @@ const MobMenu = () => {
         setOpen((prev) => !prev);
     }
     return (
-        <section className="flex justify-between items-center w-full max-w-[960px] sm:hidden py-3 text-white relative">
+        <section className="flex justify-between items-center w-full max-w-[960px] sm:hidden py-3 text-gray-200 relative">
         <div className="">
           <h1 className="text-[20px]  font-bold">SUPERMERCADO ANLAS</h1>
         </div>
         <nav>
-         <button onClick={handleClick} className="text-[30px] py-1 px-2 border border-white">
+         <button aria-label="MobMenu" onClick={handleClick} className="text-[30px] py-1 px-2 border border-white">
             {
-                !open ? <MdClose /> : <MdMenu/>
+              open ? <MdClose /> : <MdMenu/>
             }
         </button>
          {
-            !open ? <DropDown /> : null
+            open ? <DropDown /> : null
          }
         </nav>
       </section>

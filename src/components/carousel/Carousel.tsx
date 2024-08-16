@@ -43,13 +43,13 @@ function Carousel() {
 
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-0 text-white p-2 rounded-full"
       >
         &#10094;
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full"
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-0 text-white p-2 rounded-full"
       >
         &#10095;
       </button>

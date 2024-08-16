@@ -1,24 +1,32 @@
-"use client"
+"use client";
 import Carousel from "../components/carousel/Carousel";
-
-
 
 const HomePage = () => {
   return (
     <>
-      <main>
-        <h1 className="text-center text-[22px] text-[#0e1c85] mt-[50px] mx-auto mb-5 ">Un poco de nuestra historia</h1>
-        <h2 className="text-[18px] text-center w-[80%] m-auto font-light">
+      <main className=" mx-auto">
+        <h1 className="text-center text-[22px] text-[#0e1c85] mt-[50px] mb-5">
+          Un poco de nuestra historia
+        </h1>
+        <h2 className="text-[18px] text-center w-full mx-auto font-light">
           Nos dedicamos a la venta de productos alimenticios al por menor y por
           mayor de la mejor calidad brindándoles siempre el mejor servicio.
         </h2>
-        <section className="w-full h-auto">
-          <div className="flex items-center justify-center w-[80%] mt-[50px] mx-auto mb-[30px] flex-col">
-            <div><img src="../assets/images/descarga.webp" alt="img" width={300} className="w-[250px] sm:w-[300px]" /></div>
 
-            <div>
-              <h5 className="text-[#0e1c85] text-center text-[20px] pt-5">Nosotros</h5>
-              <p className="text-[14px] mt-5 mx-5 mb-[-30px]">
+        <section className="w-full h-auto mt-[50px]">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-12 lg:px-10 lg:w-[80%] lg:mx-auto">
+            <div className="lg:w-1/2 flex justify-center lg:justify-end">
+              <img
+                src="../assets/images/descarga.webp"
+                alt="Nosotros"
+                className="w-[250px] lg:w-[300px]"
+              />
+            </div>
+            <div className="lg:w-1/2">
+              <h5 className="text-[#0e1c85] text-center text-[20px] pt-5 lg:pt-0 ">
+                Nosotros
+              </h5>
+              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[12px] lg:text-justify lg:pr-20">
                 Somos un supermercado comprometido con la excelencia y la
                 satisfacción de nuestros clientes. Ofrecemos una amplia variedad
                 de productos frescos, saludables y de alta calidad, siempre
@@ -31,51 +39,69 @@ const HomePage = () => {
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-center w-[80%] mt-[50px] mx-auto mb-30px flex-col">
-            <div>
-              <h5 className="text-[#0e1c85] text-center text-[20px] pt-5">Nuestra misión</h5>
-              <p className="mt-5 mx-5 mb-[30px] py-0 pr-5 pl-[10px] text-[14px]">
+
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-12 lg:px-10 lg:w-[80%] lg:mx-auto">
+            <div className="lg:w-1/2 order-last lg:order-first">
+              <h5 className="text-[#0e1c85] text-center text-[20px] pt-5 lg:pt-0">
+                Nuestra misión
+              </h5>
+              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[12px] lg:text-justify lg:pl-20">
                 Nuestra misión es ofrecer productos de alta calidad a precios
                 justos, asegurando una experiencia de compra positiva y
-                satisfactoria para nuestros clientes. Nos comprometemos a mantener
-                un servicio al cliente excepcional, promoviendo la sostenibilidad
-                y la responsabilidad social. Trabajamos para crear un ambiente
-                acogedor y seguro donde todos puedan encontrar lo que necesitan
-                con facilidad y confianza. Agradecemos su preferencia y lealtad, y
-                nos esforzamos por ser su supermercado de elección.
+                satisfactoria para nuestros clientes. Nos comprometemos a
+                mantener un servicio al cliente excepcional, promoviendo la
+                sostenibilidad y la responsabilidad social. Trabajamos para
+                crear un ambiente acogedor y seguro donde todos puedan encontrar
+                lo que necesitan con facilidad y confianza. Agradecemos su
+                preferencia y lealtad, y nos esforzamos por ser su supermercado
+                de elección.
               </p>
             </div>
-            <div><img src="../assets/images/descarga1.webp" alt="img" width={300} className="w-[250px] sm:w-[300px]" /></div>
+            <div className="lg:w-1/2 flex justify-center lg:justify-start">
+              <img
+                src="../assets/images/descarga1.webp"
+                alt="Nuestra misión"
+                className="w-[250px] lg:w-[300px]"
+              />
+            </div>
           </div>
         </section>
 
-         <section className="carousel__home lg:hidden md-hidden">
+        <section className="w-full my-8 lg:hidden">
           <Carousel />
-         </section> 
-
-
+        </section>
 
         <section className="w-full h-auto">
-          <div className="flex items-center justify-center w-[80%] mt-[50px] mx-auto mb-[30px] flex-col">
-            <div><img src="../assets/images/descarga2.webp" alt="img" width={300} className="w-[250px] sm:w-[300px]" /></div>
-
-            <div>
-              <h5 className="text-[#0e1c85] text-center text-[20px] pt-5">Ustedes</h5>
-              <p className="text-[14px] mt-5 mx-5 mb-[-30]">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-12 lg:px-10 lg:w-[80%] lg:mx-auto">
+            <div className="lg:w-1/2 flex justify-center lg:justify-end">
+              <img
+                src="../assets/images/descarga2.webp"
+                alt="Ustedes"
+                className="w-[250px] lg:w-[300px]"
+              />
+            </div>
+            <div className="lg:w-1/2">
+              <h5 className="text-[#0e1c85] text-center text-[20px] pt-5 lg:pt-0">
+                Ustedes
+              </h5>
+              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[12px] lg:text-justify lg:pr-20">
                 Ustedes son el corazón de nuestro supermercado. Cada día
-                trabajamos para ofrecerles productos y servicios que se adapten a
-                sus necesidades y preferencias. Apreciamos su confianza y lealtad,
-                y nos esforzamos continuamente por mejorar para ustedes. Nos
-                inspira su apoyo y estamos aquí para hacer su experiencia de
-                compra lo más satisfactoria posible. ¡Gracias por ser parte de
-                nuestra comunidad!
+                trabajamos para ofrecerles productos y servicios que se adapten
+                a sus necesidades y preferencias. Apreciamos su confianza y
+                lealtad, y nos esforzamos continuamente por mejorar para
+                ustedes. Nos inspira su apoyo y estamos aquí para hacer su
+                experiencia de compra lo más satisfactoria posible. ¡Gracias por
+                ser parte de nuestra comunidad!
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-center w-[80%] mt-[50px] mx-auto mb-[30px] flex-col">
-            <div>
-              <h5 className="text-[#0e1c85] text-center text-[20px] pt-5">Mejores ofertas</h5>
-              <p className="text-[14px] mt-5 mx-5 mb-[30px] py-0 pr-5 pl-[10px]">
+
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-12 lg:px-10 lg:w-[80%] lg:mx-auto">
+            <div className="lg:w-1/2 order-last lg:order-first">
+              <h5 className="text-[#0e1c85] text-center text-[20px] pt-5 lg:pt-0">
+                Mejores ofertas
+              </h5>
+              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[12px] lg:text-justify lg:pl-20">
                 En nuestro supermercado, nos comprometemos a ofrecer las mejores
                 ofertas en una amplia gama de productos. Constantemente buscamos
                 oportunidades para proporcionarle a usted, nuestro valioso
@@ -86,13 +112,19 @@ const HomePage = () => {
                 gratificante con nuestras ofertas exclusivas y atractivas.
               </p>
             </div>
-            <div><img src="../assets/images/descarga3.webp" alt="img" width={300} className="w-[250px] sm:w-[300px]" /></div>
+            <div className="lg:w-1/2 flex justify-center lg:justify-start">
+              <img
+                src="../assets/images/descarga3.webp"
+                alt="Mejores ofertas"
+                className="w-[250px] lg:w-[300px]"
+              />
+            </div>
           </div>
         </section>
 
-        <section className="w-full bg-[#06a2d8] py-4 mb-[32px] text-[16px]">
-          <div className="marquee w-full overflow-hidden h-auto">
-            <h2 className="text-white font-semibold whitespace-nowrap animate-marquee">
+        <section className="bg-[#06a2d8] py-2 mb-[32px] text-[16px]">
+          <div>
+            <h2 className="text-gray-200 font-semibold whitespace-nowrap animate-marquee text-center">
               Aprovechá nuestro 20% de descuento en efectivo comprando más de $100.000.
             </h2>
           </div>
@@ -100,7 +132,7 @@ const HomePage = () => {
 
       </main>
     </>
-  )
-}
+  );
+};
 
 export default HomePage;
