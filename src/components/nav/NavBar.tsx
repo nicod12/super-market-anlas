@@ -20,7 +20,7 @@ const NavBar = () => {
     <section className="bg-[#07a2d8] p-1 text-gray-200  shadow-c">
       <section className="flex justify-center items-center w-[95%] max-w-[960px] my-0 mx-auto gap-12">
         <div className="hidden sm:block float-left">
-          <h1 className="text-[30px]  font-bold">SUPERMERCADO ANLAS</h1>
+          <h1 className="text-[34px]  font-bold">SUPERMERCADO ANLAS</h1>
         </div>
         <MobMenu />
         <nav className="hidden sm:block">
