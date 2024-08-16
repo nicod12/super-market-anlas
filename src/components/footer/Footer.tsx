@@ -11,7 +11,7 @@ const Footer = () => {
         <img
           src="../../assets/icons/logo-sa.png"
           alt="Logo Supermercado Anlas"
-          width={100}
+          width={150}
         />
       </div>
 
