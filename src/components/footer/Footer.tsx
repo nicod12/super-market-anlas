@@ -18,7 +18,7 @@ const Footer = () => {
 
       <div id="menu__inf">
         <nav>
-          <ul className="text-center text-[20px] lg:text-[14px] mb-[16px]">
+          <ul className="text-center text-[20px] lg:text-[18px] mb-[16px]">
           {menuItems.map((link, index) => (
               <li key={index}>
                 <Link href={link.path}> <span>{link.name}</span>
