@@ -19,7 +19,7 @@ const HomePage = () => {
               <img
                 src="../assets/images/descarga.webp"
                 alt="Nosotros"
-                className="w-[250px] lg:w-[300px]"
+                className="w-[250px] lg:w-[350px]"
               />
             </div>
             <div className="lg:w-1/2">
@@ -61,7 +61,7 @@ const HomePage = () => {
               <img
                 src="../assets/images/descarga1.webp"
                 alt="Nuestra misión"
-                className="w-[250px] lg:w-[300px]"
+                className="w-[250px] lg:w-[350px]"
               />
             </div>
           </div>
@@ -77,7 +77,7 @@ const HomePage = () => {
               <img
                 src="../assets/images/descarga2.webp"
                 alt="Ustedes"
-                className="w-[250px] lg:w-[300px]"
+                className="w-[250px] lg:w-[350px]"
               />
             </div>
             <div className="lg:w-1/2">
@@ -101,7 +101,7 @@ const HomePage = () => {
               <h5 className="text-[#0e1c85] text-center text-[20px] pt-5 lg:pt-0">
                 Mejores ofertas
               </h5>
-              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[12px] lg:text-justify lg:pl-20">
+              <p className="text-[14px] mt-5 mx-5 lg:mx-0 lg:text-[15px]  lg:pl-20">
                 En nuestro supermercado, nos comprometemos a ofrecer las mejores
                 ofertas en una amplia gama de productos. Constantemente buscamos
                 oportunidades para proporcionarle a usted, nuestro valioso
@@ -116,7 +116,7 @@ const HomePage = () => {
               <img
                 src="../assets/images/descarga3.webp"
                 alt="Mejores ofertas"
-                className="w-[250px] lg:w-[300px]"
+                className="w-[250px] lg:w-[350px]"
               />
             </div>
           </div>
