@@ -45,7 +45,7 @@ const GalleryProducts: React.FC = () => {
                             <img 
                                 src={product.image} 
                                 alt={`Image of ${product.name}`} 
-                                className="w-full h-48 mb-4" 
+                                className="w-[18rem] lg:w-full h-auto mb-4" 
                             />
                             <div className="flex flex-col flex-grow">
                                 <h2 className="text-xl lg:text-[15px] text-center font-semibold mb-1">{product.name}</h2>
