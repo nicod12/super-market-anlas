@@ -1,8 +1,9 @@
+import ContactPage from "@/pages/ContactPage"
 
 
 const page = () => {
   return (
-    <div>page</div>
+    <ContactPage />
   )
 }
 

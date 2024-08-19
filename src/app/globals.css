@@ -18,6 +18,11 @@ body {
   box-shadow: 1px 1px 6px 1px rgba(19, 19, 19, 0.51);
 }
 
+.cover {
+  background-size: cover;
+  background-image: url("../../public/assets/images/foto-contacto.webp");
+}
+
 .mobmenu {
   position: absolute;
   top: 105%;

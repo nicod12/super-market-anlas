@@ -2,6 +2,8 @@
 
 import { fetchProducts } from "@/utils/api";
 import { useEffect, useState } from "react";
+import { MoonLoader } from "react-spinners";
+
 
 interface ProductList {
     id: number;
@@ -11,10 +13,12 @@ interface ProductList {
     image: string;
 }
 
+
 const GalleryProducts: React.FC = () => {
     const [products, setProducts] = useState<ProductList[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -35,7 +39,9 @@ const GalleryProducts: React.FC = () => {
     return (
         <div>
             {loading ? (
-                <p>Loading...</p>
+                <div className="h-screen flex justify-center mt-12">
+                    <MoonLoader />
+                </div>
             ) : error ? (
                 <p className="text-red-500">{error}</p>
             ) : (
