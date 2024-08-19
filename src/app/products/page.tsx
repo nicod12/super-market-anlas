@@ -1,8 +1,9 @@
+import ProductsPage from "../../pages/ProductsPage";
 
 
 function page() {
   return (
-    <div>page</div>
+    <ProductsPage />
   )
 }
 

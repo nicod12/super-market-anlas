@@ -17,14 +17,14 @@ export const menuItems = [
 
 const NavBar = () => {
   return (
-    <section className="bg-[#07a2d8] p-1 text-gray-200  shadow-c">
+    <section className="bg-[#07a2d8] p-1 text-white  shadow-c">
       <section className="flex justify-center items-center w-[95%] max-w-[960px] my-0 mx-auto gap-12">
         <div className="hidden sm:block float-left">
-          <h1 className="text-[34px]  font-bold">SUPERMERCADO ANLAS</h1>
+          <h1 className="text-[34px]  font-bold opacity-80">SUPERMERCADO ANLAS</h1>
         </div>
         <MobMenu />
         <nav className="hidden sm:block">
-          <ul className="flex list-none gap-4 pt-2 text-[12px] uppercase">
+          <ul className="flex list-none gap-4 pt-2 text-[12px] uppercase opacity-85">
             {menuItems.map((link, index) => (
               <li key={index} className="inline-block">
                 <Link href={link.path} className="flex items-center gap-2">
