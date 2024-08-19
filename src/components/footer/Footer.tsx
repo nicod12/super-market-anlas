@@ -12,7 +12,7 @@ const Footer = () => {
           src="../../assets/icons/logo-sa.png"
           alt="Logo Supermercado Anlas"
           width={150}
-          className="w-28"
+          className="w-28 h-auto"
         />
       </div>
 
