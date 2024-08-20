@@ -3,6 +3,7 @@
 import { fetchProducts } from "@/utils/api";
 import { useEffect, useState } from "react";
 import { MoonLoader } from "react-spinners";
+import { useCartStore } from "../store/useStore";
 
 
 interface ProductList {
@@ -13,12 +14,13 @@ interface ProductList {
     image: string;
 }
 
-
 const GalleryProducts: React.FC = () => {
     const [products, setProducts] = useState<ProductList[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [quantities, setQuantities] = useState<{ [key: number]: number }>({});
 
+    const addToCart = useCartStore(state => state.addToCart);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -35,6 +37,29 @@ const GalleryProducts: React.FC = () => {
 
         fetchData();
     }, []);
+
+    const handleIncrement = (id: number) => {
+        setQuantities(prev => ({ 
+            ...prev, 
+            [id]: (prev[id] || 0) + 1 
+        }));
+    };
+
+    const handleDecrement = (id: number) => {
+        setQuantities(prev => ({ 
+            ...prev, 
+            [id]: Math.max((prev[id] || 1) - 1, 0) 
+        }));
+    };
+
+    const handleAddToCart = (id: number) => {
+        const quantity = quantities[id] || 0;
+        if (quantity > 0) {
+            addToCart(id, quantity);
+            // Opcionalmente, restablecer la cantidad después de agregar al carrito
+            setQuantities(prev => ({ ...prev, [id]: 0 }));
+        }
+    };
 
     return (
         <div>
@@ -59,16 +84,31 @@ const GalleryProducts: React.FC = () => {
                                 <p className="text-base lg:text-[12px] text-center opacity-90 mb-4">${product.price} por unidad</p>
                                 <div className="flex flex-col">
                                     <span className="flex items-center justify-center gap-4 mb-2">
-                                        <button className="py-2 px-4 bg-[#51c2f1] text-white rounded-md">-</button>
+                                        <button 
+                                            className="py-2 px-4 bg-[#51c2f1] text-white rounded-md"
+                                            onClick={() => handleDecrement(product.id)}
+                                        >
+                                            -
+                                        </button>
                                         <input 
                                             type="text" 
                                             readOnly 
-                                            placeholder="0" 
+                                            value={quantities[product.id] || 0}
                                             className="text-center w-10 py-2 px-1 rounded-md border border-gray-300" 
                                         />
-                                        <button className="py-2 px-4 bg-[#51c2f1] text-white rounded-md">+</button>
+                                        <button 
+                                            className="py-2 px-4 bg-[#51c2f1] text-white rounded-md"
+                                            onClick={() => handleIncrement(product.id)}
+                                        >
+                                            +
+                                        </button>
                                     </span>
-                                    <button className="py-2 px-4 bg-[#51c2f1] text-white rounded-md mt-2">Agregar al carrito</button>
+                                    <button 
+                                        className="py-2 px-4 bg-[#51c2f1] text-white rounded-md mt-2"
+                                        onClick={() => handleAddToCart(product.id)}
+                                    >
+                                        Agregar al carrito
+                                    </button>
                                 </div>
                             </div>
                         </div>
