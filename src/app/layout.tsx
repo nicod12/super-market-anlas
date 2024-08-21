@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "../components/nav/NavBar";
 import Footer from "../components/footer/Footer";
+import { ProductProvider } from "@/context/product-context";
 
 
 
@@ -11,6 +12,9 @@ export const metadata: Metadata = {
   description: "Super Market",
 };
 
+
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,20 +22,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="shortcut icon"
-          href="../assets/icons/logo-sa.png"
-          type="image/x-icon"
-        />
-      </head>
-      <body>
-        <NavBar />
-       <section>
-       {children}
-       </section>
-       <Footer/ >
-      </body>
+      <ProductProvider>
+        <head>
+          <link
+            rel="shortcut icon"
+            href="../assets/icons/logo-sa.png"
+            type="image/x-icon"
+          />
+        </head>
+        <body>
+          <NavBar />
+          <section>
+            {children}
+          </section>
+          <Footer />
+        </body>
+        </ProductProvider>
     </html>
   );
 }

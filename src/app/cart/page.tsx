@@ -1,8 +1,9 @@
+import StorePage from "@/pages/StorePage";
 
 
 const page = () => {
   return (
-    <div>page</div>
+    <StorePage />
   )
 }
 
