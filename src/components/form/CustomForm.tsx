@@ -5,14 +5,15 @@ import z from "zod"
 import InputForm from "../input/InputForm";
 
 const schema = z.object({
-  name: z.string().min(1, "El nombre es obligatorio"),
-  surname: z.string().min(1, "El apellido es obligatorio"),
-  email: z.string().email("Correo invalido").min(1, "El correo es obligatorio"),
+  name: z.string().trim().min(1, "El nombre es obligatorio"),
+  surname: z.string().trim().min(1, "El apellido es obligatorio"),
+  email: z.string().trim().email("Correo invalido").min(1, "El correo es obligatorio"),
   phone: z.string()
+    .trim()
     .min(7, "El número de te    léfono debe tener al menos 7 caracteres")
     .max(14, "El número de t    eléfono no puede tener más de 14 caracteres")
     .regex(/^[\d+]{7,14}$/, "El número de teléfono solo puede contener dígitos y opcionalmente un '+' al principio"),
-  comments: z.string().min(1, "El mensaje es obligatorio")
+  comments: z.string().trim().min(1, "El mensaje es obligatorio")
 });
 
 type FormValues = z.infer<typeof schema>;

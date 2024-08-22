@@ -20,7 +20,7 @@ const InputForm = ({ name, control, label, type, error }: Props) => {
         }
       />
       {
-        error && <p className="text-red-500 max-w-[200px]">{error.message}</p>
+        error && <p className="text-red-700 font-bold text-[12px]">{error.message}</p>
       }
     </div>
   )
