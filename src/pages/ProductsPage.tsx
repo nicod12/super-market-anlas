@@ -1,4 +1,6 @@
+"use client"
 import GalleryProducts from "@/components/gallery/GalleryProducts";
+
 
 const ProductsPage = () => {
     return (

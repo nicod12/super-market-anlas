@@ -7,6 +7,7 @@ import { ProductProvider } from "@/context/product-context";
 
 
 
+
 export const metadata: Metadata = {
   title: "SUPERMERCADO ANLAS",
   description: "Super Market",

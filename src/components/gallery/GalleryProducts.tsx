@@ -5,8 +5,6 @@ import { fetchProducts } from "@/utils/api";
 import { useEffect, useState } from "react";
 import { MoonLoader } from "react-spinners";
 
-
-
 interface ProductList {
     id: number;
     name: string;
@@ -36,6 +34,10 @@ const GalleryProducts: React.FC = () => {
 
         fetchData();
     }, []);
+
+    // const handleAddToCart = (product: ProductList) => {
+    //     addToCart(product);
+    // };
 
     return (
         <div>
@@ -92,6 +94,7 @@ const GalleryProducts: React.FC = () => {
                                         <button 
                                             className="py-2 px-4 bg-[#51c2f1] text-white rounded-md mt-2"
                                             disabled={selectedQuantity === 0}
+                                            onClick={() => {alert("Producto agregado!")}}
                                         >
                                             Agregar al carrito
                                         </button>
