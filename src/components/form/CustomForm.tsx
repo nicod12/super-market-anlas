@@ -43,10 +43,10 @@ const CustomForm = () => {
       <section className="relative z-10 py-16 lg:py-10 md:right-40 lg:right-64 xl:right-96">
         <form onSubmit={handleSubmit(onSubmit)} className="max-w-sm lg:max-w-md mx-auto py-3 px-5  lg:px-3 border border-gray-500 rounded-xl bg-[#1393bf] bg-opacity-90  dark:bg-opacity-90">
           <h2 className="text-white mb-5">Formulario de Contacto</h2>
-          <InputForm name="name" control={control} label="Nombre:" type="text" error={errors.name} />
-          <InputForm name="surname" control={control} label="Apellido:" type="text" error={errors.surname} />
-          <InputForm name="email" control={control} label="Correo Electrónico:" type="email" error={errors.email} />
-          <InputForm name="phone" control={control} label="Teléfono:" type="text" error={errors.phone} />
+          <InputForm name="name" control={control} label="Nombre:" type="text" error={errors.name} required={false} />
+          <InputForm name="surname" control={control} label="Apellido:" type="text" error={errors.surname} required={true} />
+          <InputForm name="email" control={control} label="Correo Electrónico:" type="email" error={errors.email} required={true} />
+          <InputForm name="phone" control={control} label="Teléfono:" type="text" error={errors.phone} required={true} />
           <div className="mb-5">
             <textarea id="comments"  {...register("comments")} className="h-24 w-full rounded-lg p-2.5 " />
             {errors?.comments?.message && (
