@@ -40,7 +40,7 @@ const CustomForm = () => {
 
   return (
     <section className="container relative">
-      <section className="relative z-10 py-16 lg:py-10 md:right-40 lg:right-64 xl:right-96">
+      <section className="relative z-10 py-16 lg:py-20 md:right-40 lg:right-64 xl:right-96 ">
         <form onSubmit={handleSubmit(onSubmit)} className="max-w-sm lg:max-w-md mx-auto py-3 px-5  lg:px-3 border border-gray-500 rounded-xl bg-[#1393bf] bg-opacity-90  dark:bg-opacity-90">
           <h2 className="text-white mb-5">Formulario de Contacto</h2>
           <InputForm name="name" control={control} label="Nombre:" type="text" error={errors.name} required={false} />
