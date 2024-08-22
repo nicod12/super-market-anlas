@@ -1,9 +1,9 @@
-import FormContact from "@/components/form/FormContact";
+import CustomForm from "@/components/form/CustomForm";
 
 
 const ContactPage = () => {
   return (
-    <FormContact />
+    <CustomForm />
   );
 };
 
