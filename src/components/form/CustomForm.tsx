@@ -19,12 +19,23 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 const CustomForm = () => {
-  const { control, handleSubmit, formState: { errors } } = useForm<FormValues>({
+  const { control, register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>({
     resolver: zodResolver(schema)
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
+    alert("Formulario Enviado");
+  }
+
+  const handleReset = () => {
+    reset({
+      name: '',
+      surname: '',
+      email: '',
+      phone: '',
+      comments: ''
+    });
   }
 
   return (
@@ -36,16 +47,26 @@ const CustomForm = () => {
           <InputForm name="surname" control={control} label="Apellido:" type="text" error={errors.surname} />
           <InputForm name="email" control={control} label="Correo Electrónico:" type="email" error={errors.email} />
           <InputForm name="phone" control={control} label="Teléfono:" type="text" error={errors.phone} />
-          <InputForm name="comments" control={control} label="Mensaje:" type="text" error={errors.comments} />
+          <div className="mb-5">
+            <textarea id="comments"  {...register("comments")} className="h-24 w-full rounded-lg p-2.5 " />
+            {errors?.comments?.message && (
+              <span className="bg-white py-0.5 px-1 rounded-lg block">
+                <h4 className="text-red-700 text-sm font-bold">
+                  {errors.comments.message}
+                </h4>
+              </span>
+            )}
+          </div>
           <div className="flex gap-2">
             <button
-              type="submit"
-              className="text-white bg-[#52c2f2] hover:bg-[#1393bf] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-blue-800">
+              type="button"
+              onClick={handleReset}
+              className="text-white bg-[#52c2f2] hover:bg-[#1393bf] focus:ring-4 focus:outline-nonefont-medium rounded-lg text-sm px-5 py-2.5 text-center ">
               Reset
             </button>
             <button
               type="submit"
-              className="text-white bg-[#52c2f2] hover:bg-[#1393bf] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-blue-800">
+              className="text-white bg-[#52c2f2] hover:bg-[#1393bf] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">
               Enviar
             </button>
           </div>

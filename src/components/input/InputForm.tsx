@@ -20,7 +20,13 @@ const InputForm = ({ name, control, label, type, error }: Props) => {
         }
       />
       {
-        error && <p className="text-red-700 font-bold text-[12px]">{error.message}</p>
+        error && (
+          <span className="bg-white mt-1.5 py-0.5 px-1 rounded-lg block">
+            <h4 className="text-red-700 text-sm font-bold ml-1">
+              {error.message}
+            </h4>
+          </span>
+        )
       }
     </div>
   )
