@@ -21,25 +21,4 @@ const ProductsPage = () => {
 
 export default ProductsPage;
 
-Combo Pizza y Burger:
-0 Pizza Especial, Calabresa o Napolitana + 1 Big Bang Burger por $17.500
-
-
-Dúo Pizza y Chedar:
-0 Pizza de Muza + 1 Hamburguesa con ChessBurguer por $14.000
-
-Mega Combo Familiar:
-1 Pizzas Especiales, Calabresas o Napolitanas + 2 Hamburguesas Simples de Chedar por $28.000
-
-  Combo Light:
-
-0 Pizza de Muza + 1 Burguesa por $15.000.
-
-Mix y Match Especial:
-
-0 Pizza de Pollo + 1 Grand Burguer $20.000
-
-  Combo Simple:
-
-0 Pizza Especial, Calabresa o Napolitana + 1 Burguer Simple $15.000.
 
