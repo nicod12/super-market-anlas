@@ -9,14 +9,14 @@ export default function Layout({
 }>) {
   return (
     <main suppressHydrationWarning={true}>
-      <section className="w-full relative">
-      <img
-                src="/assets/images/foto-contacto.webp"
-                alt="background"
-                className="absolute inset-0 w-full h-full cover"
-            />
+      <section className="w-full h-svh relative">
+        <img
+          src="/assets/images/foto-contacto.webp"
+          alt="background"
+          className="absolute inset-0 w-full h-full cover"
+        />
         {children}
-        
+
       </section>
     </main>
   );
