@@ -1,6 +1,6 @@
 "use client"
+import PaymentInfo from '@/components/infoPay/PaymentInfo';
 import React from 'react';
-import { SlArrowDown } from "react-icons/sl";
 
 
 const StorePage: React.FC = () => {
@@ -40,12 +40,7 @@ const StorePage: React.FC = () => {
 
       <p className="text-2xl text-center text-[#0e1c85] font-bold mt-1.5 mx-auto mb-7 ">¡Envío gratis!</p>
 
-      <section className="flex flex-col justify-center items-center gap-5">
-        <button className="py-4 px-5 text-sm text-[#06A2D8]">
-          ¿Cómo realizo el pago si no tengo cuenta de Mercado Libre?
-          <SlArrowDown />
-        </button>
-      </section>
+      <PaymentInfo />
 
     </section>
   );
