@@ -17,7 +17,7 @@ const InputForm = ({ name, control, label, type, error, required }: Props) => {
         name={name}
         control={control}
         render={({ field }) =>
-          <input id={name} re type={type} required={required} {...field} className={`shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm lg:text-md rounded-lg block w-full p-2.5 ${error ? "border border-red-500 mt-1" : ""}`} />
+          <input id={name}  type={type} required={required} {...field} className={`shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm lg:text-md rounded-lg block w-full p-2.5 ${error ? "border border-red-500 mt-1" : ""}`} />
         }
       />
       {
