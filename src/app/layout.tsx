@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "../components/nav/NavBar";
 import Footer from "../components/footer/Footer";
+import ContextProvider from "@/features/ContextProvider";
 
 
 
@@ -23,6 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <ContextProvider>
         <head>
           <link
             rel="shortcut icon"
@@ -37,6 +39,7 @@ export default function RootLayout({
           </section>
           <Footer />
         </body>
+      </ContextProvider>
     </html>
   );
 }
