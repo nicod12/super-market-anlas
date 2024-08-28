@@ -32,11 +32,11 @@ const StorePage: React.FC = () => {
         <p className="text-2xl text-[#0e1c85] font-bold mt-2.5 mx-auto mb-7 text-center">Dirección</p>
       </section>
 
-      <article className='grid grid-cols-1 lg:grid-cols-4'>
-        <div className="text-sm text-[#585656] bg-[#eeeeee]  border-2 border-[#585656] rounded-s w-[320px] my-5 p-5 mx-auto">Mitre 914</div>
-        <div className="text-sm text-[#585656] bg-[#eeeeee]  border-2 border-[#585656] rounded-s w-[320px] my-5 p-5 mx-auto">Ciudad: Villa Rosa</div>
-        <div className="text-sm text-[#585656] bg-[#eeeeee]  border-2 border-[#585656] rounded-s w-[320px] my-5 p-5 mx-auto">Provincia: Buenos Aires</div>
-        <div className="text-sm text-[#585656] bg-[#eeeeee]  border-2 border-[#585656] rounded-s w-[320px] my-5 p-5 mx-auto">Codigo Postal: B1228</div>
+      <article className='grid grid-cols-1 lg:grid-cols-4 gap-5 justify-center lg:w-full'>
+        <div className="text-sm text-[#585656] bg-[#eeeeee]  border-2 border-[#585656] rounded-s w-full max-w-[320px] my-5 p-5 mx-auto">Mitre 914</div>
+        <div className="text-sm text-[#585656] bg-[#eeeeee]  border-2 border-[#585656] rounded-s w-full max-w-[320px] my-5 p-5 mx-auto">Ciudad: Villa Rosa</div>
+        <div className="text-sm text-[#585656] bg-[#eeeeee]  border-2 border-[#585656] rounded-s w-full max-w-[320px] my-5 p-5 mx-auto">Provincia: Buenos Aires</div>
+        <div className="text-sm text-[#585656] bg-[#eeeeee]  border-2 border-[#585656] rounded-s w-full max-w-[320px] my-5 p-5 mx-auto">Codigo Postal: B1228</div>
       </article>
 
       <p className="text-2xl text-center text-[#0e1c85] font-bold mt-1.5 mx-auto mb-7 ">¡Envío gratis!</p>
