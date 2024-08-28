@@ -17,7 +17,7 @@ export const menuItems = [
 
 const NavBar = () => {
   return (
-    <section className="bg-[#07a2d8] lg:py-4 text-white  shadow-c">
+    <section className="bg-[#07a2d8] lg:py-3 text-white  shadow-c">
       <section className="flex justify-center items-center w-[95%] max-w-[960px] my-0 mx-auto gap-12">
         <div className="hidden sm:block float-left">
           <h1 className="text-[34px]  font-bold opacity-80">SUPERMERCADO ANLAS</h1>
