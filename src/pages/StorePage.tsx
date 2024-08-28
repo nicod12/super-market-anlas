@@ -8,14 +8,14 @@ const StorePage: React.FC = () => {
   return (
     <section className='container mx-0'>
       <h2 className="underline text-[#0e1c85] text-2xl lg:text-3xl lg:text-start lg:ml-5 text-center my-[3.5rem] ">Productos de nuestro negocio elegidos</h2>
-      <p className="text-center mb-4">El carrito está vacío.</p>
+      <p className="text-center mb-6">El carrito está vacío.</p>
 
       <div className=" bg-[#06a2d8] p-1 opacity-50  my-7 mx-4 h-2"></div>
       <div className=" bg-[#06a2d8] p-1 opacity-50 my-7 mx-4 h-2"></div>
       <div className=" bg-[#06a2d8] p-1 opacity-50 my-7 mx-4 h-2"></div>
       <div className=" bg-[#06a2d8] p-1 opacity-50 my-7 mx-4 h-2"></div>
 
-      <section className="grid grid-cols-1 lg:grid-cols-3">
+      <section className="grid grid-cols-1 lg:mt-20 lg:grid-cols-3">
         <div>
           <img src='/assets/images/MediosPago.webp' alt='image' className='w-auto h-auto lg:w-80 lg:h-[200px]' />
         </div>
