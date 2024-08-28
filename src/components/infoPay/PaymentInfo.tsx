@@ -8,20 +8,20 @@ type LinksItems = {
 
 const links: LinksItems[] = [
   {
-    text: "¿Cómo realizo el pago si no tengo cuenta de Mercado Libre?",
-    description: "¡Crear un cuenta es muy fácil! Al momento de comprar, te redirigiremos a Mercado Libre para que la crees. Sólo tenés que ingresar un e-mail, una clave y continuar con tu compra."
+    text: "┬┐C├│mo realizo el pago si no tengo cuenta de Mercado Libre?",
+    description: "┬íCrear un cuenta es muy f├ícil! Al momento de comprar, te redirigiremos a Mercado Libre para que la crees. S├│lo ten├®s que ingresar un e-mail, una clave y continuar con tu compra."
   },
   {
-    text: "¿Dónde veo el costo de envío y el tiempo de entrega?",
-    description: "En la página del producto que quieras comprar verás la opción de calcular cuándo llega, con la información sobre el costo de envío y el tiempo de entrega."
+    text: "┬┐D├│nde veo el costo de env├¡o y el tiempo de entrega?",
+    description: "En la p├ígina del producto que quieras comprar ver├ís la opci├│n de calcular cu├índo llega, con la informaci├│n sobre el costo de env├¡o y el tiempo de entrega."
   },
   {
-    text: "¿Puedo pagar en cuotas?",
-    description: "Podrás ver en la página del producto si se puede pagar en cuotas y con qué medios. Si decidís comprarlo, antes de pagar podrás elegir la cantidad de cuotas y te informaremos el valor de cada una."
+    text: "┬┐Puedo pagar en cuotas?",
+    description: "Podr├ís ver en la p├ígina del producto si se puede pagar en cuotas y con qu├® medios. Si decid├¡s comprarlo, antes de pagar podr├ís elegir la cantidad de cuotas y te informaremos el valor de cada una."
   },
   {
-    text: "¿Cómo puedo realizar cambios y devoluciones?",
-    description: "Los cambios y devoluciones de productos se realizan a través de Mercado Libre. Podés hacerlo en tu computadora o en la aplicación desde la sección Mis Compras, seleccionando el producto y luego eligiendo la opción Devolver el producto. Te daremos una etiqueta de envío para que imprimas y pegues en el paquete para llevarlo al correo ¡y listo!"
+    text: "┬┐C├│mo puedo realizar cambios y devoluciones?",
+    description: "Los cambios y devoluciones de productos se realizan a trav├®s de Mercado Libre. Pod├®s hacerlo en tu computadora o en la aplicaci├│n desde la secci├│n Mis Compras, seleccionando el producto y luego eligiendo la opci├│n Devolver el producto. Te daremos una etiqueta de env├¡o para que imprimas y pegues en el paquete para llevarlo al correo ┬íy listo!"
   }
 ]
 
@@ -39,16 +39,16 @@ const PaymentInfo = () => {
           onClick={toggleInfo}
           className="py-2 px-5 text-sm text-[#06A2D8] flex items-center"
         >
-          ¿Cómo realizo el pago si no tengo cuenta de Mercado Libre?
+          ┬┐C├│mo realizo el pago si no tengo cuenta de Mercado Libre?
           {isInfoVisible ? <SlArrowUp /> : <SlArrowDown />}
         </button>
       </div>
       {isInfoVisible && (
         <div className="text-gray-700 text-center">
-          <p> ¡Crear una cuenta es muy fácil! Al momento de
+          <p> ┬íCrear una cuenta es muy f├ícil! Al momento de
             comprar, te
             redirigiremos a Mercado
-            Libre para que la crees. Sólo tenés que ingresar un e-mail, una
+            Libre para que la crees. S├│lo ten├®s que ingresar un e-mail, una
             clave y continuar
             con tu compra.</p>
         </div>
@@ -58,3 +58,4 @@ const PaymentInfo = () => {
 };
 
 export default PaymentInfo;
+
