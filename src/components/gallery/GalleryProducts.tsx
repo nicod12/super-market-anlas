@@ -16,8 +16,6 @@ interface ProductList {
 const initialCartState: CartState = {
   items: [],
 };
-
-
 const GalleryProducts: React.FC = () => {
 
   const [cartState, dispatch] = useReducer(CartReducer, initialCartState);
@@ -41,20 +39,24 @@ const GalleryProducts: React.FC = () => {
     fetchData();
   }, []);
 
-
   const handleAddToCart = (product: ProductList) => {
-    dispatch({
-      type: "Add",
-      payload: {
-        id: product.id,
-        name: product.name,
-        price: parseFloat(product.price),
-        quantity: 1,
-        stock: product.stock
-      }
-    });
-  };
+    const cartItem = cartState.items.find(item => item.id === product.id);
 
+    if (cartItem) {
+      handleIncreaseQuantity(product.id);
+    } else {
+      dispatch({
+        type: "Add",
+        payload: {
+          id: product.id,
+          name: product.name,
+          price: parseFloat(product.price),
+          quantity: 1,
+          stock: product.stock
+        }
+      });
+    }
+  };
 
   const handleIncreaseQuantity = (id: number) => {
     dispatch({ type: "Increase", payload: { id } });
@@ -63,6 +65,7 @@ const GalleryProducts: React.FC = () => {
   const handleDecreaseQuantity = (id: number) => {
     dispatch({ type: "Decrease", payload: { id } });
   };
+
   return (
     <div>
       {loading ? (
@@ -72,7 +75,7 @@ const GalleryProducts: React.FC = () => {
       ) : error ? (
         <p className="text-red-500">{error}</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-5 px-5 my-3 lg:px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-5 px-5 my-12 lg:px-4">
           {products.map(product => {
             const cartItem = cartState.items.find(item => item.id === product.id);
 
@@ -85,7 +88,7 @@ const GalleryProducts: React.FC = () => {
                 />
                 <div className="flex flex-col flex-grow">
                   <h2 className="text-xl lg:text-[15px] text-center font-semibold mb-1">{product.name}</h2>
-                  <p className="text-base lg:text-[12px] text-center opacity-90 mb-1"></p>
+                  <p className="text-base lg:text-[12px] text-center opacity-90 mb-1">Stock:{product.stock}</p>
                   <p className="text-base lg:text-[12px] text-center opacity-90 mb-4">
                     ${product.price} por unidad
                   </p>
@@ -106,15 +109,15 @@ const GalleryProducts: React.FC = () => {
                       />
                       <button
                         className="py-2 px-4 bg-[#51c2f1] text-white rounded-md"
-                        onClick={() => handleIncreaseQuantity(product.id)}
-                        disabled={!cartItem || cartItem.quantity >= product.stock}
+                        onClick={() => handleAddToCart(product)}
+                        disabled={cartItem && cartItem.quantity >= product.stock}
                       >
                         +
                       </button>
                     </span>
                     <button
                       className="py-2 px-4 bg-[#51c2f1] text-white rounded-md mt-2"
-                      onClick={() => handleAddToCart(product)}
+                      onClick={() => alert("Producto agregado!")}
                     >
                       Agregar al carrito
                     </button>
