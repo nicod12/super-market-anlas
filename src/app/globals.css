@@ -24,25 +24,36 @@ body {
 }
 
 .mobmenu {
+  top: 100%;
+  right: 0;
   position: absolute;
-  top: 105%;
-  right: -15px;
   background-color: #06a2d8;
+  clip-path: circle(0 at top right);
+  transition: clip-path ease-in-out 0.5s;
   backdrop-filter: blur(8px);
   z-index: 100;
-  box-shadow: 0px 5px 7px rgba(63, 62, 62, 0.75)
+  /* Asegúrate de que el contenedor tenga un tamaño adecuado */
+  width: 192px;
+  height: fit-content;
+}
+
+.mobmenu-open {
+  clip-path: circle(150% at top right);
 }
 
 .dropdown-item {
-  border-bottom: 1px solid #ffffff; /* Ajusta el color según sea necesario */
+  border-bottom: 1px solid #ffffff;
+  /* Ajusta el color según sea necesario */
 }
 
 .dropdown-item:not(:last-child) {
-  border-bottom: 2px solid #ffffff; /* Añade un borde inferior a todos menos al último */
+  border-bottom: 2px solid #ffffff;
+  /* Añade un borde inferior a todos menos al último */
 }
 
 .dropdown-item:last-child {
-  border-bottom: none; /* Asegúrate de que el último elemento no tenga borde */
+  border-bottom: none;
+  /* Asegúrate de que el último elemento no tenga borde */
 }
 
 @layer utilities {
@@ -57,6 +68,7 @@ body {
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
