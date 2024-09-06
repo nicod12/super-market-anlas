@@ -18,7 +18,6 @@ const initialCartState: CartState = {
   items: [],
 };
 const GalleryProducts: React.FC = () => {
-
   const [cartState, dispatch] = useReducer(CartReducer, initialCartState);
   const [products, setProducts] = useState<ProductList[]>([]);
   const [loading, setLoading] = useState(true);
@@ -40,29 +39,6 @@ const GalleryProducts: React.FC = () => {
 
     fetchData();
   }, []);
-
-  const handleAddToCart = (product: ProductList) => {
-    const cartItem = cartState.items.find(item => item.id === product.id);
-
-    if (cartItem) {
-      handleIncreaseQuantity(product.id);
-    } else {
-      dispatch({
-        type: "Add",
-        payload: {
-          id: product.id,
-          name: product.name,
-          price: parseFloat(product.price),
-          quantity: 1,
-          stock: product.stock
-        }
-      });
-    }
-  };
-
-  const handleClick = () => {
-    setModal(true);
-  }
 
   const handleIncreaseQuantity = (id: number) => {
     dispatch({ type: "Increase", payload: { id } });
@@ -103,7 +79,6 @@ const GalleryProducts: React.FC = () => {
                       <button
                         className="py-2 px-4 bg-[#51c2f1] text-white rounded-md"
                         onClick={() => handleDecreaseQuantity(product.id)}
-                        disabled={!cartItem || cartItem.quantity <= 1}
                       >
                         -
                       </button>
@@ -115,21 +90,15 @@ const GalleryProducts: React.FC = () => {
                       />
                       <button
                         className="py-2 px-4 bg-[#51c2f1] text-white rounded-md"
-                        onClick={() => handleAddToCart(product)}
-                        disabled={cartItem && cartItem.quantity >= product.stock}
-                      >
+                        onClick={() => handleIncreaseQuantity(product.id)}                 >
                         +
                       </button>
                     </span>
                     <button
                       className="py-2 px-4 bg-[#51c2f1] text-white rounded-md mt-2"
-                      onClick={() => handleClick()}
                     >
                       Agregar al carrito
                     </button>
-                    {
-                      modal && <ModalAddCart />
-                    }
                   </div>
                 </div>
               </div>
@@ -137,6 +106,7 @@ const GalleryProducts: React.FC = () => {
           })}
         </div>
       )}
+      {modal && <ModalAddCart onClose={() => setModal(false)} />}
     </div>
   );
 };
