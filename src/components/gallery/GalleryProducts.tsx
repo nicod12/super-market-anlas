@@ -4,6 +4,7 @@ import { fetchProducts } from "@/utils/api";
 import { useReducer, useEffect, useState } from "react";
 import { MoonLoader } from "react-spinners";
 import CartReducer, { CartState, CartItem } from "@/features/CartReducer";
+import ModalAddCart from "../modals/ModalAddCart";
 
 interface ProductList {
   id: number;
@@ -22,6 +23,7 @@ const GalleryProducts: React.FC = () => {
   const [products, setProducts] = useState<ProductList[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [modal, setModal] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,6 +59,10 @@ const GalleryProducts: React.FC = () => {
       });
     }
   };
+
+  const handleClick = () => {
+    setModal(true);
+  }
 
   const handleIncreaseQuantity = (id: number) => {
     dispatch({ type: "Increase", payload: { id } });
@@ -117,10 +123,13 @@ const GalleryProducts: React.FC = () => {
                     </span>
                     <button
                       className="py-2 px-4 bg-[#51c2f1] text-white rounded-md mt-2"
-                      onClick={() => alert("Producto agregado!")}
+                      onClick={() => handleClick()}
                     >
                       Agregar al carrito
                     </button>
+                    {
+                      modal && <ModalAddCart />
+                    }
                   </div>
                 </div>
               </div>
