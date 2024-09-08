@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "../components/nav/NavBar";
 import Footer from "../components/footer/Footer";
-import ContextProvider from "@/features/ContextProvider";
 
 
 
@@ -24,22 +23,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ContextProvider>
-        <head>
-          <link
-            rel="shortcut icon"
-            href="../assets/icons/logo-sa.png"
-            type="image/x-icon"
-          />
-        </head>
-        <body>
-          <NavBar />
-          <section>
-            {children}
-          </section>
-          <Footer />
-        </body>
-      </ContextProvider>
+      <head>
+        <link
+          rel="shortcut icon"
+          href="../assets/icons/logo-sa.png"
+          type="image/x-icon"
+        />
+      </head>
+      <body>
+        <NavBar />
+        <section>
+          {children}
+        </section>
+        <Footer />
+      </body>
     </html>
   );
 }
