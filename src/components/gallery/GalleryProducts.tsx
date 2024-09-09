@@ -18,27 +18,13 @@ const GalleryProducts: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [modal, setModal] = useState(false);
-  const [quantities, setQuantities] = useState<{ [key: number]: number }>({});
-  const [stocks, setStocks] = useState<{ [key: number]: number }>({});
+
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fetchProducts();
         setProducts(data);
-        // Inicializar cantidades y stocks
-        const initialQuantities = data.reduce((acc: any, product: ProductList) => {
-          acc[product.id] = 0; // Iniciar cantidades en 0
-          return acc;
-        }, {});
-
-        const initialStocks = data.reduce((acc: any, product: ProductList) => {
-          acc[product.id] = product.stock;
-          return acc;
-        }, {});
-
-        setQuantities(initialQuantities);
-        setStocks(initialStocks);
       } catch (error) {
         console.error('Error fetching products:', error);
         setError('Error fetching products. Please try again.');
@@ -51,27 +37,9 @@ const GalleryProducts: React.FC = () => {
   }, []);
 
   const handleIncreaseQuantity = (id: number) => {
-    setQuantities((prevQuantities) => ({
-      ...prevQuantities,
-      [id]: prevQuantities[id] < stocks[id] ? prevQuantities[id] + 1 : prevQuantities[id],
-    }));
-
-    setStocks((prevStocks) => ({
-      ...prevStocks,
-      [id]: prevStocks[id] > 0 ? prevStocks[id] - 1 : prevStocks[id],
-    }));
   };
 
   const handleDecreaseQuantity = (id: number) => {
-    setQuantities((prevQuantities) => ({
-      ...prevQuantities,
-      [id]: prevQuantities[id] > 0 ? prevQuantities[id] - 1 : prevQuantities[id],
-    }));
-
-    setStocks((prevStocks) => ({
-      ...prevStocks,
-      [id]: quantities[id] > 0 ? prevStocks[id] + 1 : prevStocks[id],
-    }));
   };
 
   return (
@@ -84,7 +52,8 @@ const GalleryProducts: React.FC = () => {
         <p className="text-red-500">{error}</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-5 px-5 my-12 lg:px-4">
-          {products.map((product) => {
+          {products.map(product => {
+
             return (
               <div key={product.id} className="flex flex-col justify-between bg-white border rounded-lg shadow-sm p-4 h-full">
                 <img
@@ -94,14 +63,13 @@ const GalleryProducts: React.FC = () => {
                 />
                 <div className="flex flex-col flex-grow">
                   <h2 className="text-xl lg:text-[15px] text-center font-semibold mb-1">{product.name}</h2>
-                  <p className="text-base lg:text-[12px] text-center opacity-90 mb-1">Stock: {stocks[product.id]}</p>
+                  <p className="text-base lg:text-[12px] text-center opacity-90 mb-1">Stock:{product.stock}</p>
                   <p className="text-base lg:text-[12px] text-center opacity-90 mb-4">
                     ${product.price} por unidad
                   </p>
                   <div className="flex flex-col">
                     <span className="flex items-center justify-center gap-4 mb-2">
                       <button
-                        onClick={() => handleDecreaseQuantity(product.id)}
                         className="py-2 px-4 bg-[#51c2f1] text-white rounded-md"
                       >
                         -
@@ -109,11 +77,9 @@ const GalleryProducts: React.FC = () => {
                       <input
                         type="text"
                         readOnly
-                        value={quantities[product.id]}
                         className="text-center w-10 py-2 px-1 rounded-md border border-gray-300"
                       />
                       <button
-                        onClick={() => handleIncreaseQuantity(product.id)}
                         className="py-2 px-4 bg-[#51c2f1] text-white rounded-md"
                       >
                         +
