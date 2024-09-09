@@ -36,11 +36,6 @@ const GalleryProducts: React.FC = () => {
     fetchData();
   }, []);
 
-  const handleIncreaseQuantity = (id: number) => {
-  };
-
-  const handleDecreaseQuantity = (id: number) => {
-  };
 
   return (
     <div>
