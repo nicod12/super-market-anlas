@@ -1,9 +1,8 @@
 "use client";
 
 import { fetchProducts } from "@/utils/api";
-import { useReducer, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { MoonLoader } from "react-spinners";
-import CartReducer, { CartState, CartItem } from "@/features/CartReducer";
 import ModalAddCart from "../modals/ModalAddCart";
 
 interface ProductList {
@@ -14,11 +13,7 @@ interface ProductList {
   image: string;
 };
 
-const initialCartState: CartState = {
-  items: [],
-};
 const GalleryProducts: React.FC = () => {
-  const [cartState, dispatch] = useReducer(CartReducer, initialCartState);
   const [products, setProducts] = useState<ProductList[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -41,11 +36,9 @@ const GalleryProducts: React.FC = () => {
   }, []);
 
   const handleIncreaseQuantity = (id: number) => {
-    dispatch({ type: "Increase", payload: { id } });
   };
 
   const handleDecreaseQuantity = (id: number) => {
-    dispatch({ type: "Decrease", payload: { id } });
   };
 
   return (
@@ -59,7 +52,6 @@ const GalleryProducts: React.FC = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-5 px-5 my-12 lg:px-4">
           {products.map(product => {
-            const cartItem = cartState.items.find(item => item.id === product.id);
 
             return (
               <div key={product.id} className="flex flex-col justify-between bg-white border rounded-lg shadow-sm p-4 h-full">
@@ -78,19 +70,17 @@ const GalleryProducts: React.FC = () => {
                     <span className="flex items-center justify-center gap-4 mb-2">
                       <button
                         className="py-2 px-4 bg-[#51c2f1] text-white rounded-md"
-                        onClick={() => handleDecreaseQuantity(product.id)}
                       >
                         -
                       </button>
                       <input
                         type="text"
                         readOnly
-                        value={cartItem ? cartItem.quantity : 0}
                         className="text-center w-10 py-2 px-1 rounded-md border border-gray-300"
                       />
                       <button
                         className="py-2 px-4 bg-[#51c2f1] text-white rounded-md"
-                        onClick={() => handleIncreaseQuantity(product.id)}                 >
+                      >
                         +
                       </button>
                     </span>
