@@ -36,8 +36,14 @@ const GalleryProducts: React.FC = () => {
         const initialStock: { [key: number]: number } = data.reduce((acc: { [key: number]: number }, product: ProductList) => {
           acc[product.id] = product.stock;
           return acc;
-        }, {}); setQuantity(initialQuantities);
+        }, {});
+        setQuantity(initialQuantities);
         setAvailableStock(initialStock);
+
+        const savedCart = localStorage.getItem('cart');
+        if (savedCart) {
+          setCart(JSON.parse(savedCart));
+        };
 
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -64,7 +70,9 @@ const GalleryProducts: React.FC = () => {
   };
 
   const handleAddToCart = (product: ProductList) => {
-    setCart((prevCart) => [...prevCart, { ...product, quantity: quantity[product.id] }]);
+    const updatedCart = [...cart, { ...product, quantity: quantity[product.id] }];
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
     setModal(true);
   };
 
