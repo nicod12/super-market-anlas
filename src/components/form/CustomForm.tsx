@@ -39,16 +39,24 @@ const CustomForm = () => {
   }
 
   return (
-    <section className="container relative">
-      <section className="relative z-10 py-4 lg:py-20 md:right-40 lg:right-64 xl:right-[25rem] ">
-        <form onSubmit={handleSubmit(onSubmit)} className="max-w-sm lg:max-w-xl mx-auto py-3 px-5 my-10 lg:px-3 border border-gray-500 rounded-xl bg-[#1393bf] bg-opacity-90  dark:bg-opacity-90">
-          <h2 className="text-white mb-5">Formulario de Contacto</h2>
+    <section className="container mx-auto relative h-full flex items-center justify-center">
+      <section className="relative z-10 py-4 lg:py-40 w-full flex justify-center">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="max-w-sm lg:max-w-xl w-full py-3 px-5 my-10 lg:px-6 border border-gray-500 rounded-xl bg-[#1393bf] bg-opacity-90 dark:bg-opacity-90"
+        >
+          <h2 className="text-white mb-5 text-center">Formulario de Contacto</h2>
           <InputForm name="name" control={control} label="Nombre:" type="text" error={errors.name} required={false} />
           <InputForm name="surname" control={control} label="Apellido:" type="text" error={errors.surname} required={true} />
           <InputForm name="email" control={control} label="Correo Electrónico:" type="email" error={errors.email} required={true} />
           <InputForm name="phone" control={control} label="Teléfono:" type="text" error={errors.phone} required={true} />
           <div className="mb-5">
-            <textarea id="comments"  {...register("comments")} className="h-24 w-full rounded-lg p-2.5 " />
+            <textarea
+              id="comments"
+              {...register("comments")}
+              className="h-24 w-full rounded-lg p-2.5"
+              placeholder="Comentarios..."
+            />
             {errors?.comments?.message && (
               <span className="bg-white py-0.5 px-1 rounded-lg block">
                 <h4 className="text-red-700 text-sm font-bold">
@@ -57,22 +65,27 @@ const CustomForm = () => {
               </span>
             )}
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-col lg:flex-row gap-2">
             <button
               type="button"
               onClick={handleReset}
-              className="text-white bg-[#52c2f2] hover:bg-[#1393bf] focus:ring-4 focus:outline-nonefont-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+              className="text-white bg-[#52c2f2] hover:bg-[#1393bf] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            >
               Reset
             </button>
             <button
               type="submit"
-              className="text-white bg-[#52c2f2] hover:bg-[#1393bf] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+              className="text-white bg-[#52c2f2] hover:bg-[#1393bf] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            >
               Enviar
             </button>
           </div>
         </form>
       </section>
-    </section>);
+    </section>
+
+
+  );
 }
 
 export default CustomForm;
